@@ -6,7 +6,7 @@ FROM alpine
 #
 # USAGE:
 #   docker run --detach --restart always --cap-add=SYS_ADMIN -e "container=docker" \
-#     --name ntopng --hostname ntopng.$(hostname -d) -p 3000:3000/tcp thbe/ntopng
+#     --name ntopng --hostname ntopng.$(hostname -d) -p 3000:3000/tcp thrx-devops/ntopng
 #   docker logs ntopng
 #   docker exec -ti ntopng /bin/sh
 #
@@ -28,13 +28,13 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
     apk add --no-cache curl perl redis ntopng ndpi
 
 # Copy configuration files
-COPY root /
+COPY fritzdump.sh /
 
 # Prepare NTOPNG start
-RUN chmod 755 /srv/run.sh
+RUN chmod 755 /fritzdump.sh
 
 # Expose NTOPNG standard http port
 EXPOSE 3000/tcp
 
 # Start NTOPNG
-CMD ["/srv/run.sh"]
+CMD ["/fritzdump.sh"]
