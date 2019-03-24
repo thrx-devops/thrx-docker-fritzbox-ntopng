@@ -51,4 +51,6 @@ echo "Capturing traffic on Fritz!Box interface $IFACE ..." 1>&2
 # In case you want to use tshark instead of ntopng
 #wget --no-check-certificate -qO- $FRITZIP/cgi-bin/capture_notimeout?ifaceorminor=$IFACE\&snaplen=\&capture=Start\&sid=$SID | /usr/bin/tshark -r -
 
+etc/init.d/redis-server
+
 wget --no-check-certificate -qO- $FRITZIP/cgi-bin/capture_notimeout?ifaceorminor=$IFACE\&snaplen=\&capture=Start\&sid=$SID | ntopng -i -
