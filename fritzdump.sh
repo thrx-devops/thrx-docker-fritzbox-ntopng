@@ -3,11 +3,14 @@
 # This is the address of the router
 FRITZIP=http://fritz.box
 
-# This is the WAN interface
-IFACE="2-0"
+if [ -z "$IFACE" ] ; then 
+   # This is the WAN interface
+   IFACE="2-0"
+   
+   # Lan Interface
+   #IFACE="1-lan"
+fi
 
-# Lan Interface
-#IFACE="1-lan"
 
 # Required: You must create & switch your Fritz!Box to usernamed-based login authentification!
 FRITZUSER=$1
