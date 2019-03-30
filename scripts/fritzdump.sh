@@ -13,8 +13,8 @@ fi
 
 
 # Required: You must create & switch your Fritz!Box to usernamed-based login authentification!
-FRITZUSER=$1
-FRITZPWD=$2
+#FRITZUSER=$1
+#FRITZPWD=$2
 
 SIDFILE="/tmp/fritz.sid"
 
