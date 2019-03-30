@@ -7,9 +7,9 @@ ENV TERM xterm
 
 RUN apt-get update
 RUN apt-get -y -q install curl lsb-release
-RUN curl -s --remote-name http://apt.ntop.org/16.04/all/apt-ntop.deb
+ADD http://apt.ntop.org/16.04/all/apt-ntop.deb .
 RUN dpkg -i apt-ntop.deb
-RUN rm -rf apt-ntop.deb
+# RUN rm -rf apt-ntop.deb
 
 RUN apt-get update
 RUN apt-get -y -q install ntopng redis-server libpcap0.8 libmysqlclient-dev
