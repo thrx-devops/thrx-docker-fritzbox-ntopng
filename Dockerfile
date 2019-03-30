@@ -12,6 +12,7 @@ RUN dpkg -i apt-ntop-stable.deb
 # RUN rm -rf apt-ntop-stable.deb
 
 RUN apt-get update
+RUN apt-get -y -q install perl libdigest-md5-perl
 RUN apt-get -y -q install ntopng redis-server libpcap0.8 libmysqlclient-dev
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
