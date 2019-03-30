@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 MAINTAINER Thrx De <coder@thrx.de>
 
 # Set environment
@@ -8,7 +8,7 @@ ENV TERM xterm
 RUN apt-get update
 RUN apt-get -y -q install curl lsb-release
 RUN add-apt-repository universe
-ADD http://apt-stable.ntop.org/18.04/all/apt-ntop-stable.deb .
+ADD http://apt-stable.ntop.org/16.04/all/apt-ntop-stable.deb .
 RUN dpkg -i apt-ntop-stable.deb
 # RUN rm -rf apt-ntop-stable.deb
 
