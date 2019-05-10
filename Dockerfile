@@ -10,7 +10,7 @@ ENV LC_ALL en_US.UTF-8
 ENV TERM xterm
 
 RUN apt-get update
-RUN apt-get -y -q install curl lsb-release perl libdigest-md5-perl ntopng redis-server libpcap0.8 libmysqlclient-dev
+RUN apt-get -y -q install curl wget lsb-release perl libdigest-md5-perl ntopng redis-server libpcap0.8 libmysqlclient-dev
 ADD http://apt-stable.ntop.org/16.04/all/apt-ntop-stable.deb .
 RUN dpkg -i apt-ntop-stable.deb
 # RUN rm -rf apt-ntop-stable.deb

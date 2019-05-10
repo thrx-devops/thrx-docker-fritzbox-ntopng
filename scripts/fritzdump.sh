@@ -54,3 +54,7 @@ echo "Capturing traffic on Fritz!Box interface $IFACE ..." 1>&2
 /etc/init.d/redis-server start
 
 wget --no-check-certificate -qO- $FRITZIP/cgi-bin/capture_notimeout?ifaceorminor=$IFACE\&snaplen=\&capture=Start\&sid=$SID | ntopng -i -
+
+## for test:
+#Angefragte Adresse:http://fritz.box/cgi-bin/capture_notimeout?sid=9bfc4ba412b39802&capture=Start&snaplen=1600&ifaceorminor=1-lan
+#Angefragte Adresse:http://fritz.box/cgi-bin/capture_notimeout?sid=9bfc4ba412b39802&capture=Start&snaplen=1600&ifaceorminor=1-wan
